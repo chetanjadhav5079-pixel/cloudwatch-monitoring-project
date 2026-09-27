@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Dashboard</h1>
+
+            <p>Welcome, Admin 👋</p>
+
+            <hr>
+
+            <p><strong>Application Status:</strong> 🟢 Healthy</p>
+            <p><strong>Server:</strong> AWS EC2</p>
+            <p><strong>Application:</strong> CloudWatch Login App</p>
+            <p><strong>Environment:</strong> Dev</p>
+
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "/";
+        }
+    </script>
+
+</body>
+</html>
