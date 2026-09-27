@@ -26,3 +26,20 @@ jobs:
 
       - name: Test GitHub Actions
         run: echo "GitHub Actions is working successfully!"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/login-app
+            git pull origin main
+            sudo systemctl restart login-backend.service
+            sudo systemctl status login-backend.service --no-pager
