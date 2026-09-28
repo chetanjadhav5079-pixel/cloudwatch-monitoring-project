@@ -41,5 +41,6 @@ jobs:
           script: |
             cd /home/ubuntu/login-app
             git pull origin main
+            sudo cp /home/ubuntu/login-app/frontend/dashboard.html /var/www/login-app/dashboard.html
             sudo systemctl restart login-backend.service
             sudo systemctl status login-backend.service --no-pager
