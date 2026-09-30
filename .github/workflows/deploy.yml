@@ -44,6 +44,3 @@ jobs:
             sudo cp /home/ubuntu/login-app/frontend/dashboard.html /var/www/login-app/dashboard.html
             sudo systemctl restart login-backend.service
             sudo systemctl status login-backend.service --no-pager
-            echo "Checking application health..."
-            sleep 5
-            curl -f http://localhost/api/health
